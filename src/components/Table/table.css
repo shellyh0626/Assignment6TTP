@@ -1,0 +1,13 @@
+
+table,tr,td{
+    margin-top:2em;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+
+tr, td{
+    width:2em;
+    height:2em;
+}

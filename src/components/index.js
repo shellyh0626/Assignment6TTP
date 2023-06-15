@@ -1,6 +1,5 @@
-import App from './App';
-import Table from './Table';
+import Table from './Table/Table';
 import TableRow from './TableRow';
-import TableCell from './TableCell';
+import TableCell from './TableCell/TableCell';
 
-export { App, Table, TableRow, TableCell };
+export { Table, TableRow, TableCell };

@@ -1,5 +1,5 @@
 import './App.css';
-import { HeaderView, MainView, FooterView, RoutesView } from "./components";
+import { Table, TableRow, TableCell } from "./components";
 
 function App() {
   return (
