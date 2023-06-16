@@ -4,6 +4,15 @@ import './table.css';
 class Table extends Component {
   constructor(props){
     super(props);
+    this.state ={
+      rows: []
+    };
+  }
+
+  addNewRow = () => {
+    this.setState({
+      rows: [...rows, <TableRow key = {this.staterows.length + 1} />]
+    })
   }
 
   render() {
@@ -11,8 +20,7 @@ class Table extends Component {
       <div>
         <table>
           <tbody>
-            <TableRow />
-            <TableRow />
+            {this.state.rows}
           </tbody>
         </table>
       </div>
