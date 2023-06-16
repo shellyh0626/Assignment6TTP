@@ -10,7 +10,10 @@ class Table extends Component {
     return (
       <div>
         <table>
-         
+          <tbody>
+            <TableRow />
+            <TableRow />
+          </tbody>
         </table>
       </div>
     )

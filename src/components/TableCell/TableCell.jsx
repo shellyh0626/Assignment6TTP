@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './tableCell.css'
 
 class TableCell extends Component {
     constructor(props){
@@ -6,9 +7,7 @@ class TableCell extends Component {
     }
     render() {
      return (
-      <div>
-     
-      </div>
+      <td></td>
     )
   }
 }
