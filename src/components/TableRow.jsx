@@ -5,9 +5,9 @@ const TableRow = ({numCols}) => {
   const popCells = () => {
     var cells = [];
     for (let i = 0; i < numCols; i++) {
-      cells.push(<TableCell />);
-      return cells;
+      cells.push(<TableCell key={i}/>);
     }
+    return cells;
   }
   
   return (

@@ -14,7 +14,7 @@ const Table = () => {
   const redrawRows = () => {
     const newRows = [];
     for (let i = 0; i < rows.length; i++) {
-      newRows.push(<TableRow numCols={numCols} />)
+      newRows.push(<TableRow numCols={numCols} key={i}/>)
     }
     setRows(newRows);
   }
@@ -22,7 +22,7 @@ const Table = () => {
   useEffect(() => {redrawRows()}, [numCols]);
 
   const addRow = () => {
-    setRows([...rows, <TableRow numCols={numCols} />]);
+    setRows([...rows, <TableRow numCols={numCols} key={rows.length}/>]);
   }
         
   return (
