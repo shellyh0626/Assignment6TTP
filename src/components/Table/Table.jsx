@@ -62,6 +62,15 @@ const Table = () => {
   };
 
 
+  //Resets the color of all the cells to default
+  const resetColor =()=>{
+    const tableCells = document.querySelectorAll('.Table td');
+    tableCells.forEach((cell) => {
+      cell.style.backgroundColor = "";
+    });
+  }
+
+
   return (
     <div className='Table'>
         <button className="button" onClick={addColumn}>Add Column</button>
@@ -69,6 +78,7 @@ const Table = () => {
         <button className="button" onClick={removeRow}>Remove Row</button>
         <button className="button" onClick={removeColumn}>Remove Column</button>
         <button className="button" onClick={colorAll}>Color All</button>
+        <button className="button" onClick={resetColor}>Reset Color</button>
         <div className='colorPicker'>
         <select className={`select-color ${color}`} onChange={handleColorChange}>
             <option value="white">default</option>
