@@ -70,14 +70,25 @@ const Table = () => {
     });
   }
 
+  //this function is called when the fill uncolored button is clicked
+  //this function colors all the default colored cell with the color
+  //that is currently selected
+  const fillUncoloredCell = ()=>{
+    const tableCells = document.querySelectorAll('.Table td');
+    tableCells.forEach((cell) => {
+      if(cell.style.backgroundColor === "" || cell.style.backgroundColor === "white"){
+        cell.style.backgroundColor = color;
+      }
+    });
+  }
 
   return (
     <div className='Table'>
         <button className="button" onClick={addColumn}>Add Column</button>
         <button className="button" onClick={addRow}>Add Row</button>
         <button className="button" onClick={removeRow}>Remove Row</button>
-        <button className="button" onClick={removeColumn}>Remove Column</button>
-        <button className="button" onClick={colorAll}>Color All</button>
+        <button className="button" onClick={removeColumn}>Remove Column</button>        <button className="button" onClick={colorAll}>Color All</button>
+        <button className="button" onClick={fillUncoloredCell}>Fill Uncolored</button>
         <button className="button" onClick={resetColor}>Reset Color</button>
         <div className='colorPicker'>
         <label>Select color:</label>
