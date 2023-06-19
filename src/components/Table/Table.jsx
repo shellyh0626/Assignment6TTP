@@ -1,31 +1,41 @@
 import React, { Component } from 'react'
-import { TableRow } from 'components';
+import { TableCell, TableRow } from 'components';
 import './table.css';
-class Table extends Component {
-  constructor(props){
-    super(props);
-    this.state ={
-      rows: []
-    };
+import { useState, useEffect } from 'react';
+
+const Table = () => {
+  const [rows, setRows] = useState([]);
+  const [numCols, setNumCols] = useState(1);
+
+  const addCell = () => {
+    setNumCols(numCols+1);
   }
 
-  addNewRow = () => {
-    this.setState({
-      rows: [...rows, <TableRow key = {this.staterows.length + 1} />]
-    })
+  const redrawRows = () => {
+    const newRows = [];
+    for (let i = 0; i < rows.length; i++) {
+      newRows.push(<TableRow numCols={numCols} />)
+    }
+    setRows(newRows);
   }
 
-  render() {
-    return (
-      <div>
-        <table>
-          <tbody>
-            {this.state.rows}
-          </tbody>
-        </table>
-      </div>
-    )
+  useEffect(() => {redrawRows()}, [numCols]);
+
+  const addRow = () => {
+    setRows([...rows, <TableRow numCols={numCols} />]);
   }
+        
+  return (
+    <div>
+        <button onClick={addCell}>Add Cell</button>
+        <button onClick={addRow}>Add Row</button>
+      <table>
+        <tbody>
+          {rows}
+        </tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Table;
