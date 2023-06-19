@@ -1,4 +1,4 @@
-# Assignment #8: DOM Challenges III with ReactJS
+# Assignment #6: DOM Challenges III with ReactJS
 Due See Column B in Bootcamp Tracker Google Sheet
 Submitting The established protocol for submitting group work (locating the Pinned Google Sheet on the Cohort Slack General Channel, navigating to the appropriate tab, putting down your Group Members’ names, and linking the repository on GitHub that you all collaborated on) 
 # Goal:
