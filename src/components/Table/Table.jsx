@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { TableCell, TableRow } from 'components';
+import {TableRow } from 'components';
 import './table.css';
 import { useState, useEffect } from 'react';
 
 const Table = () => {
   const [rows, setRows] = useState([]);
   const [numCols, setNumCols] = useState(1);
-
+  const [color, setColor] = useState("white");
   const addColumn = () => {
     setNumCols(numCols+1);
   }
@@ -37,8 +37,25 @@ const Table = () => {
       setNumCols(numCols-1);
     }
   }
+
+  //Updates the color whenever it is changed in the dropdown menu
+  const handleColorChange= (event) =>{
+    setColor(event.target.value);
+  }
+  {console.log(color)}
   return (
     <div>
+      <div className='colorPicker'>
+        <select onChange={handleColorChange}>
+            <option value="white">default</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yello">Yellow</option>
+            <option value="pink">Pink</option>
+            <option value="white">White</option>
+        </select>
+      </div>
         <button onClick={addColumn}>Add Column</button>
         <button onClick={addRow}>Add Row</button>
         <button onClick={removeRow}>Remove Row</button>

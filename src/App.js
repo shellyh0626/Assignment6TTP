@@ -1,4 +1,4 @@
-import { DropDownMenu, Table, TableRow, TableCell } from "./components";
+import {Table} from "./components";
 import React,{Component} from "react";
 import './App.css';
 
@@ -10,7 +10,6 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <DropDownMenu/>
         <Table/>
       </div>
     );
