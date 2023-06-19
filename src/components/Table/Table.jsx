@@ -51,22 +51,21 @@ const Table = () => {
   }
 
   return (
-    <div>
-      <div className='colorPicker'>
-        <select onChange={handleColorChange}>
+    <div className='Table'>
+        <button className="button" onClick={addColumn}>Add Column</button>
+        <button className="button" onClick={addRow}>Add Row</button>
+        <button className="button" onClick={removeRow}>Remove Row</button>
+        <button className="button" onClick={removeColumn}>Remove Column</button>
+        <div className='colorPicker'>
+        <select className={`select-color ${color}`} onChange={handleColorChange}>
             <option value="white">default</option>
             <option value="red">Red</option>
             <option value="blue">Blue</option>
             <option value="green">Green</option>
             <option value="yellow">Yellow</option>
             <option value="pink">Pink</option>
-            <option value="white">White</option>
         </select>
       </div>
-        <button onClick={addColumn}>Add Column</button>
-        <button onClick={addRow}>Add Row</button>
-        <button onClick={removeRow}>Remove Row</button>
-        <button onClick={removeColumn}>Remove Column</button>
       <table>
         <tbody>
           {rows}
