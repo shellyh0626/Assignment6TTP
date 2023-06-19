@@ -1,14 +1,36 @@
 import React, { Component } from 'react'
 import {TableRow } from 'components';
 import './table.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Table = () => {
   const [rows, setRows] = useState([<TableRow key={1} />]);
   const [numCols, setNumCols] = useState(1);
   const [color, setColor] = useState("white");
+  const [isDragging, setIsDragging] = useState(false);
+  const isDraggingRef = useRef();
+  isDraggingRef.current = isDragging;
 
   useEffect(() => {redrawRows()}, [numCols]);
+  
+  useEffect(() => {
+    const handleMouseDown = () => {
+      setIsDragging(true);
+      console.log(isDragging)
+    };
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      console.log(isDragging)
+    };
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
+
+  useEffect(() => console.log(isDragging),[isDragging])
 
   const addColumn = () => {
     setNumCols(numCols+1);
@@ -17,7 +39,7 @@ const Table = () => {
   const redrawRows = () => {
     const newRows = [];
     for (let i = 0; i < rows.length; i++) {
-      newRows.push(<TableRow numCols={numCols} changeCellColor={changeCellColor} key={i}/>)
+      newRows.push(<TableRow numCols={numCols} changeCellColor={changeCellColor} changeCellColorOnDrag={changeCellColorOnDrag} key={i}/>)
     }
     setRows(newRows);
   }
@@ -50,6 +72,12 @@ const Table = () => {
     event.target.style.backgroundColor = color;
   }
 
+  const changeCellColorOnDrag = (event) => {
+    console.log("here:" + isDraggingRef.current)
+    if (isDraggingRef.current) {
+      event.target.style.backgroundColor = color;
+    }
+  }
 
   //When the color All button is clicked, the cells color will change
   //based on the currently selected color

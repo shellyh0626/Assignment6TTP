@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './tableCell.css'
 
-const TableCell = ({changeCellColor}) => {
+const TableCell = ({changeCellColor, changeCellColorOnDrag}) => {
 
   return (
-    <td onClick={(e) => changeCellColor(e)}></td>
+    <td onMouseOver={(e) => changeCellColorOnDrag(e)} onMouseDown={(e) => changeCellColor(e)}></td>
   )
 }
 
