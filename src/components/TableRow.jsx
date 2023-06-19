@@ -5,7 +5,7 @@ const TableRow = ({numCols, changeCellColor}) => {
   const popCells = () => {
     var cells = [];
     for (let i = 0; i < numCols; i++) {
-      cells.push(<TableCell changeCellColor={(e) => changeCellColor(e)} key={i}/>);
+        cells.push(<TableCell changeCellColor={(e) => changeCellColor(e)} key={i}/>);
     }
     return cells;
   }
