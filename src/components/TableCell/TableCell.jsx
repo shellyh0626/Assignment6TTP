@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './tableCell.css'
 
-const TableCell = () => {
+const TableCell = ({changeCellColor}) => {
 
   return (
-    <td></td>
+    <td onClick={(e) => changeCellColor(e)}></td>
   )
 }
 

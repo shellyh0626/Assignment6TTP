@@ -7,6 +7,7 @@ const Table = () => {
   const [rows, setRows] = useState([]);
   const [numCols, setNumCols] = useState(1);
   const [color, setColor] = useState("white");
+
   const addColumn = () => {
     setNumCols(numCols+1);
   }
@@ -14,7 +15,7 @@ const Table = () => {
   const redrawRows = () => {
     const newRows = [];
     for (let i = 0; i < rows.length; i++) {
-      newRows.push(<TableRow numCols={numCols} key={i}/>)
+      newRows.push(<TableRow numCols={numCols} changeCellColor={changeCellColor} key={i}/>)
     }
     setRows(newRows);
   }
@@ -22,7 +23,7 @@ const Table = () => {
   useEffect(() => {redrawRows()}, [numCols]);
 
   const addRow = () => {
-    setRows([...rows, <TableRow numCols={numCols} key={rows.length}/>]);
+    setRows([...rows, <TableRow numCols={numCols} changeCellColor={changeCellColor} key={rows.length}/>]);
   }
 
   //removes a row from the grid utilizing the slice method
@@ -42,7 +43,13 @@ const Table = () => {
   const handleColorChange= (event) =>{
     setColor(event.target.value);
   }
-  {console.log(color)}
+
+  useEffect(() => {redrawRows()}, [color])
+
+  const changeCellColor = (event) => {
+    event.target.style.backgroundColor = color;
+  }
+
   return (
     <div>
       <div className='colorPicker'>
@@ -51,7 +58,7 @@ const Table = () => {
             <option value="red">Red</option>
             <option value="blue">Blue</option>
             <option value="green">Green</option>
-            <option value="yello">Yellow</option>
+            <option value="yellow">Yellow</option>
             <option value="pink">Pink</option>
             <option value="white">White</option>
         </select>
