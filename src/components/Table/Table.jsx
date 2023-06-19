@@ -4,7 +4,7 @@ import './table.css';
 import { useState, useEffect } from 'react';
 
 const Table = () => {
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState([<TableRow key={1} />]);
   const [numCols, setNumCols] = useState(1);
   const [color, setColor] = useState("white");
 
