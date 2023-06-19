@@ -80,6 +80,7 @@ const Table = () => {
         <button className="button" onClick={colorAll}>Color All</button>
         <button className="button" onClick={resetColor}>Reset Color</button>
         <div className='colorPicker'>
+        <label>Select color:</label>
         <select className={`select-color ${color}`} onChange={handleColorChange}>
             <option value="white">default</option>
             <option value="red">Red</option>
