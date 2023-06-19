@@ -8,6 +8,8 @@ const Table = () => {
   const [numCols, setNumCols] = useState(1);
   const [color, setColor] = useState("white");
 
+  useEffect(() => {redrawRows()}, [numCols]);
+
   const addColumn = () => {
     setNumCols(numCols+1);
   }
@@ -19,8 +21,6 @@ const Table = () => {
     }
     setRows(newRows);
   }
-
-  useEffect(() => {redrawRows()}, [numCols]);
 
   const addRow = () => {
     setRows([...rows, <TableRow numCols={numCols} changeCellColor={changeCellColor} key={rows.length}/>]);
@@ -50,12 +50,25 @@ const Table = () => {
     event.target.style.backgroundColor = color;
   }
 
+
+  //When the color All button is clicked, the cells color will change
+  //based on the currently selected color
+  const colorAll = () => {
+    //gets all the cell from the table and iterates using forEach to change the color
+    const tableCells = document.querySelectorAll('.Table td');
+    tableCells.forEach((cell) => {
+      cell.style.backgroundColor = color;
+    });
+  };
+
+
   return (
     <div className='Table'>
         <button className="button" onClick={addColumn}>Add Column</button>
         <button className="button" onClick={addRow}>Add Row</button>
         <button className="button" onClick={removeRow}>Remove Row</button>
         <button className="button" onClick={removeColumn}>Remove Column</button>
+        <button className="button" onClick={colorAll}>Color All</button>
         <div className='colorPicker'>
         <select className={`select-color ${color}`} onChange={handleColorChange}>
             <option value="white">default</option>
