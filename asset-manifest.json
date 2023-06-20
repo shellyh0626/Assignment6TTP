@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/.github.io/Assignment6TTP/static/css/main.58ccdc40.css",
-    "main.js": "/.github.io/Assignment6TTP/static/js/main.22c2cb02.js",
-    "static/js/787.dd0c3aea.chunk.js": "/.github.io/Assignment6TTP/static/js/787.dd0c3aea.chunk.js",
-    "index.html": "/.github.io/Assignment6TTP/index.html",
-    "main.58ccdc40.css.map": "/.github.io/Assignment6TTP/static/css/main.58ccdc40.css.map",
-    "main.22c2cb02.js.map": "/.github.io/Assignment6TTP/static/js/main.22c2cb02.js.map",
-    "787.dd0c3aea.chunk.js.map": "/.github.io/Assignment6TTP/static/js/787.dd0c3aea.chunk.js.map"
+    "main.css": "/Assignment6TTP/static/css/main.58ccdc40.css",
+    "main.js": "/Assignment6TTP/static/js/main.7d7e7a7e.js",
+    "static/js/787.dd0c3aea.chunk.js": "/Assignment6TTP/static/js/787.dd0c3aea.chunk.js",
+    "index.html": "/Assignment6TTP/index.html",
+    "main.58ccdc40.css.map": "/Assignment6TTP/static/css/main.58ccdc40.css.map",
+    "main.7d7e7a7e.js.map": "/Assignment6TTP/static/js/main.7d7e7a7e.js.map",
+    "787.dd0c3aea.chunk.js.map": "/Assignment6TTP/static/js/787.dd0c3aea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58ccdc40.css",
-    "static/js/main.22c2cb02.js"
+    "static/js/main.7d7e7a7e.js"
   ]
 }
